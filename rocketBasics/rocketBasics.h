@@ -17,8 +17,50 @@
 #define LOW 0
 #define __io volatile uint32_t
 #define SEC_TICKS 16000
-/** Functions *********************************************************************/
-/** Delay------------------------------------------------------------------------*/
+/** Variáveis globais *********************************************************************/
+
+volatile uint32_t millis_count = 0;
+
+/** Funções *********************************************************************/
+/** Delay e timers ------------------------------------------------------------------------*/
+
+void millis_init() {
+    // Ativa o click para TIM2 em APB1
+    RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+
+    // Número de ticks do clock para incrementar o timer
+    TIM2->PSC = (STD_CLOCK / 1000) - 1;
+
+    //Reseta valor do timer para 1 milisegundo
+    TIM2->ARR = 1;
+
+    // Ativa as interrupções
+    TIM2->DIER |= TIM_DIER_UIE;
+
+    // Ativa o timer
+    TIM2->CR1 |= TIM_CR1_CEN;
+
+    // Usa o NVIC para ativar interrupções globais com o timer
+    NVIC_EnableIRQ(TIM2_IRQn);
+}
+
+// Handler do timer2
+void TIM2_IRQHandler() {
+
+    if (TIM2->SR & TIM_SR_UIF) {
+
+        //Limpra a flag de interrupção
+        TIM2->SR &= ~TIM_SR_UIF;
+
+        //Incrementa o contador em 2
+        millis_count++;
+        millis_count++;
+    }
+}
+
+uint32_t millis() {
+    return millis_count;
+}
 
 void delay(int time){
 	SysTick->LOAD = SEC_TICKS;
