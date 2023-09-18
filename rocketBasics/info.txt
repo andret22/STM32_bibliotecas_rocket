@@ -1,2 +1,0 @@
-  Biblioteca contendo algumas funções básicas para o microcontrolador STM32F767xx, como monitor serial, escrita analógica e digital,
-conversores analógicos-digitáis, delay, dentre outros.
