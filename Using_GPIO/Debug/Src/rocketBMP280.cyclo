@@ -1,5 +1,0 @@
-rocketBMP280.c:28:6:BMP280_read_address	1
-rocketBMP280.c:32:6:BMP280_write	1
-rocketBMP280.c:40:6:BMP280_readTemperature	1
-rocketBMP280.c:44:6:BMP280_readPressure	1
-rocketBMP280.c:48:6:BMP280_reset	1

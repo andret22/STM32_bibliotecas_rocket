@@ -1,5 +1,0 @@
-rocketI2C.c:3:6:rocketI2C2_init	2
-rocketI2C.c:49:6:I2C2_read	12
-rocketI2C.c:115:6:I2C2_burstRead	16
-rocketI2C.c:200:6:I2C2_burstWrite	6
-rocketI2C.c:255:6:I2C2_burstRead32	17

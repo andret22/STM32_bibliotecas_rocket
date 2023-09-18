@@ -1,5 +1,0 @@
-../Src/rocketI2C.c:3:6:rocketI2C2_init	16	static
-../Src/rocketI2C.c:49:6:I2C2_read	32	static
-../Src/rocketI2C.c:115:6:I2C2_burstRead	40	static
-../Src/rocketI2C.c:200:6:I2C2_burstWrite	32	static
-../Src/rocketI2C.c:255:6:I2C2_burstRead32	40	static

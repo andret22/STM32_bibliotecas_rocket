@@ -1,6 +1,0 @@
-"./Src/main.o"
-"./Src/rocketBMP280.o"
-"./Src/rocketI2C.o"
-"./Src/syscalls.o"
-"./Src/sysmem.o"
-"./Startup/startup_stm32f767zitx.o"
