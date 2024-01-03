@@ -1,2 +1,0 @@
-Biblioteca básica implementada em low layer drivers para o STM32F767xx. 
-Contém algumas função básicas para os timers 2,3,4 e 5
